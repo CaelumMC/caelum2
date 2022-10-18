@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "caelum-datagen",
+  "name": "Caelum Data Generation",
+  "version": "${version}",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "io.github.caelummc.caelum.datagen.CaelumData"
+    ]
+  },
+  "depends": {
+    "caelum": "*"
+  }
+}
