@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
+import net.minecraft.block.FallingBlock;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -26,12 +27,13 @@ public class Caelum implements ModInitializer {
         Blocks.register();
         Items.register();
 
-        ResourceManagerHelper.registerBuiltinResourcePack(new Identifier("caelum:caelum32"), FabricLoader.getInstance().getModContainer("caelum").orElseThrow(), "Caelum x32", ResourcePackActivationType.NORMAL);
+        ResourceManagerHelper.registerBuiltinResourcePack(new Identifier("caelum:caelum32"), FabricLoader.getInstance().getModContainer("caelum").orElseThrow(), "Caelum x32 Generated Textures", ResourcePackActivationType.NORMAL);
     }
 
     public static class Blocks {
         public static final Block AERRACK = register("aerrack", new Block(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3F, 9F)));
-        public static final Block AERRACK_GRAVEL = register("aerrack_gravel", new Block(FabricBlockSettings.of(Material.AGGREGATE).sounds(BlockSoundGroup.NETHER_BRICKS).requiresTool().strength(3F, 9F)));
+        public static final Block AERRACK_GRAVEL = register("aerrack_gravel", new FallingBlock(FabricBlockSettings.of(Material.AGGREGATE).sounds(BlockSoundGroup.NETHER_BRICKS).requiresTool().strength(3F)));
+        public static final Block ROOTED_AERRACK = register("rooted_aerrack", new Block(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.WOOD).requiresTool().strength(5F, 12F)));
 
         private static void register() {
 
@@ -48,6 +50,7 @@ public class Caelum implements ModInitializer {
 
         public static final Item AERRACK = register("aerrack", new BlockItem(Blocks.AERRACK, new Item.Settings().group(MAIN)));
         public static final Item AERRACK_GRAVEL = register("aerrack_gravel", new BlockItem(Blocks.AERRACK_GRAVEL, new Item.Settings().group(MAIN)));
+        public static final Item ROOTED_AERRACK = register("rooted_aerrack", new BlockItem(Blocks.ROOTED_AERRACK, new Item.Settings().group(MAIN)));
 
         private static void register() {
 
