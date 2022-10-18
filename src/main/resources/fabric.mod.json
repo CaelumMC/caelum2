@@ -1,29 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "caelum",
   "version": "${version}",
-
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Caelum",
+  "description": "Moist and icy world, full of color and magic. As long as you obey the rules.",
   "authors": [
-    "Me!"
+    "Reoseah"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/CaelumMC/caelum2"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/caelum/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "io.github.caelummc.caelum.Caelum"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "caelum.mixins.json"
   ],
 
   "depends": {
@@ -33,6 +31,5 @@
     "java": ">=17"
   },
   "suggests": {
-    "another-mod": "*"
   }
 }
