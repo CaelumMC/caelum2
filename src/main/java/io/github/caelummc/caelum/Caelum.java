@@ -4,6 +4,7 @@ import io.github.caelummc.caelum.block.AerrackBlock;
 import io.github.caelummc.caelum.block.MossyAerrackBlock;
 import io.github.caelummc.caelum.block.SkymossBlock;
 import io.github.caelummc.caelum.block.SkymossStalksBlock;
+import io.github.caelummc.caelum.world.CaelumChunkGenerator;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -25,6 +26,8 @@ public class Caelum implements ModInitializer {
     public void onInitialize() {
         Blocks.register();
         Items.register();
+        
+        Registry.register(Registry.CHUNK_GENERATOR, new Identifier("caelum:caelum"), CaelumChunkGenerator.CODEC);
     }
 
     public static class Blocks {
