@@ -1,6 +1,6 @@
 package io.github.caelummc.caelum.block;
 
-import io.github.caelummc.caelum.Uplands;
+import io.github.caelummc.caelum.Caelum;
 import net.minecraft.block.*;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
@@ -11,8 +11,9 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 
-public class SkymossStalksBlock extends PlantBlock {
+public class SkymossStalksBlock extends PlantBlock implements Fertilizable {
     protected static final VoxelShape SHAPE_STAGE0 = Block.createCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 3.0D, 15.0D);
     protected static final VoxelShape SHAPE_STAGE1 = Block.createCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 5.0D, 15.0D);
     public static final IntProperty AGE = Properties.AGE_1;
@@ -29,8 +30,8 @@ public class SkymossStalksBlock extends PlantBlock {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.getBlock() == Uplands.Blocks.SKYMOSS
-                || floor.getBlock() == Uplands.Blocks.MOSSY_AERRACK;
+        return floor.getBlock() == Caelum.Blocks.SKYMOSS
+                || floor.getBlock() == Caelum.Blocks.MOSSY_AERRACK;
     }
 
     @Override
@@ -67,5 +68,20 @@ public class SkymossStalksBlock extends PlantBlock {
             }
         }
         return count;
+    }
+
+    @Override
+    public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
+        return state.get(AGE) == 0;
+    }
+
+    @Override
+    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
+        return state.get(AGE) == 0;
+    }
+
+    @Override
+    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
+        world.setBlockState(pos, state.with(AGE, 1));
     }
 }

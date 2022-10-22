@@ -17,7 +17,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.caelummc.caelum.Uplands"
+      "io.github.caelummc.caelum.Caelum"
+    ],
+    "client": [
+      "io.github.caelummc.caelum.CaelumClient"
     ]
   },
   "mixins": [

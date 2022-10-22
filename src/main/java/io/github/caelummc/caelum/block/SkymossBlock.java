@@ -1,6 +1,6 @@
 package io.github.caelummc.caelum.block;
 
-import io.github.caelummc.caelum.Uplands;
+import io.github.caelummc.caelum.Caelum;
 import net.minecraft.block.*;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -59,8 +59,8 @@ public class SkymossBlock extends Block implements Fertilizable {
             }
         }
         for (BlockPos ipos : BlockPos.iterate(pos.add(-2, -2, -2), pos.add(2, 2, 2))) {
-            if (world.isAir(ipos) && random.nextBoolean() && Uplands.Blocks.SKYMOSS_STALKS.getDefaultState().canPlaceAt(world, ipos)) {
-                world.setBlockState(ipos, Uplands.Blocks.SKYMOSS_STALKS.getDefaultState().with(SkymossStalksBlock.AGE, random.nextInt(2)));
+            if (world.isAir(ipos) && random.nextInt(4) == 0 && Caelum.Blocks.SKYMOSS_STALKS.getDefaultState().canPlaceAt(world, ipos)) {
+                world.setBlockState(ipos, Caelum.Blocks.SKYMOSS_STALKS.getDefaultState().with(SkymossStalksBlock.AGE, random.nextInt(4) == 0 ? 1 : 0));
             }
         }
     }

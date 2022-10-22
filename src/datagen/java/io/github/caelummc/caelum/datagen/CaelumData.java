@@ -1,6 +1,6 @@
 package io.github.caelummc.caelum.datagen;
 
-import io.github.caelummc.caelum.Uplands;
+import io.github.caelummc.caelum.Caelum;
 import io.github.caelummc.caelum.block.SkymossStalksBlock;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -28,7 +28,7 @@ import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Identifier;
 
-public class UplandsData implements DataGeneratorEntrypoint {
+public class CaelumData implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator generator) {
         generator.addProvider(ModelProvider::new);
@@ -44,19 +44,19 @@ class ModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator gen) {
-        gen.registerSimpleCubeAll(Uplands.Blocks.AERRACK);
-        gen.registerSimpleCubeAll(Uplands.Blocks.AERRACK_GRAVEL);
-        gen.registerSimpleCubeAll(Uplands.Blocks.ROOTED_AERRACK);
-        registerMossyAerrack(gen, Uplands.Blocks.MOSSY_AERRACK, TextureMap.getId(Uplands.Blocks.AERRACK));
-        registerNetherrackLike(gen, Uplands.Blocks.SKYMOSS);
-        registerSkymossStalks(gen, Uplands.Blocks.SKYMOSS_STALKS);
+        gen.registerSimpleCubeAll(Caelum.Blocks.AERRACK);
+        gen.registerSimpleCubeAll(Caelum.Blocks.AERRACK_GRAVEL);
+        gen.registerSimpleCubeAll(Caelum.Blocks.ROOTED_AERRACK);
+        registerMossyAerrack(gen, Caelum.Blocks.MOSSY_AERRACK, TextureMap.getId(Caelum.Blocks.AERRACK));
+        registerNetherrackLike(gen, Caelum.Blocks.SKYMOSS);
+        registerSkymossStalks(gen, Caelum.Blocks.SKYMOSS_STALKS);
 
-        gen.registerParentedItemModel(Uplands.Blocks.AERRACK, new Identifier("caelum:block/aerrack"));
-        gen.registerParentedItemModel(Uplands.Blocks.AERRACK_GRAVEL, new Identifier("caelum:block/aerrack_gravel"));
-        gen.registerParentedItemModel(Uplands.Blocks.ROOTED_AERRACK, new Identifier("caelum:block/rooted_aerrack"));
-        gen.registerParentedItemModel(Uplands.Blocks.MOSSY_AERRACK, new Identifier("caelum:block/mossy_aerrack"));
-        gen.registerParentedItemModel(Uplands.Blocks.SKYMOSS, new Identifier("caelum:block/skymoss"));
-        gen.registerItemModel(Uplands.Blocks.SKYMOSS_STALKS);
+        gen.registerParentedItemModel(Caelum.Blocks.AERRACK, new Identifier("caelum:block/aerrack"));
+        gen.registerParentedItemModel(Caelum.Blocks.AERRACK_GRAVEL, new Identifier("caelum:block/aerrack_gravel"));
+        gen.registerParentedItemModel(Caelum.Blocks.ROOTED_AERRACK, new Identifier("caelum:block/rooted_aerrack"));
+        gen.registerParentedItemModel(Caelum.Blocks.MOSSY_AERRACK, new Identifier("caelum:block/mossy_aerrack"));
+        gen.registerParentedItemModel(Caelum.Blocks.SKYMOSS, new Identifier("caelum:block/skymoss"));
+        gen.registerItemModel(Caelum.Blocks.SKYMOSS_STALKS.asItem());
     }
 
     private static void registerMossyAerrack(BlockStateModelGenerator gen, Block block, Identifier bottom) {
@@ -94,12 +94,12 @@ class BlockLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     protected void generateBlockLootTables() {
-        this.addDrop(Uplands.Blocks.AERRACK);
-        this.addDrop(Uplands.Blocks.AERRACK_GRAVEL);
+        this.addDrop(Caelum.Blocks.AERRACK);
+        this.addDrop(Caelum.Blocks.AERRACK_GRAVEL);
         // TODO change sticks to skyroot sticks when added
-        this.addDrop(Uplands.Blocks.ROOTED_AERRACK, rootedAerrackDrop(Uplands.Blocks.ROOTED_AERRACK, Uplands.Blocks.AERRACK_GRAVEL, Items.STICK));
-        this.addDrop(Uplands.Blocks.SKYMOSS);
-        this.addDrop(Uplands.Blocks.SKYMOSS_STALKS, BlockLootTableGenerator::dropsWithShears);
+        this.addDrop(Caelum.Blocks.ROOTED_AERRACK, rootedAerrackDrop(Caelum.Blocks.ROOTED_AERRACK, Caelum.Blocks.AERRACK_GRAVEL, Items.STICK));
+        this.addDrop(Caelum.Blocks.SKYMOSS);
+        this.addDrop(Caelum.Blocks.SKYMOSS_STALKS, BlockLootTableGenerator::dropsWithShears);
     }
 
     public static LootTable.Builder rootedAerrackDrop(Block silkTouch, Block notSilkTouch, Item stick) {
@@ -119,11 +119,11 @@ class BlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void generateTags() {
-        this.getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).add(Uplands.Blocks.AERRACK);
-        this.getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE).add(Uplands.Blocks.AERRACK_GRAVEL);
-        this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(Uplands.Blocks.AERRACK_GRAVEL, Uplands.Blocks.ROOTED_AERRACK);
-        this.getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).add(Uplands.Blocks.SKYMOSS);
-        this.getOrCreateTagBuilder(FabricMineableTags.SHEARS_MINEABLE).add(Uplands.Blocks.SKYMOSS_STALKS);
+        this.getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).add(Caelum.Blocks.AERRACK);
+        this.getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE).add(Caelum.Blocks.AERRACK_GRAVEL);
+        this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(Caelum.Blocks.AERRACK_GRAVEL, Caelum.Blocks.ROOTED_AERRACK);
+        this.getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).add(Caelum.Blocks.SKYMOSS);
+        this.getOrCreateTagBuilder(FabricMineableTags.SHEARS_MINEABLE).add(Caelum.Blocks.SKYMOSS_STALKS);
 
     }
 }

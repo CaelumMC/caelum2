@@ -1,6 +1,6 @@
 package io.github.caelummc.caelum.block;
 
-import io.github.caelummc.caelum.Uplands;
+import io.github.caelummc.caelum.Caelum;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Fertilizable;
@@ -22,7 +22,7 @@ public class AerrackBlock extends Block implements Fertilizable {
         }
         for (BlockPos ipos : BlockPos.iterate(pos.add(-1, -1, -1), pos.add(1, 1, 1))) {
             BlockState istate = world.getBlockState(ipos);
-            if (istate.getBlock() == Uplands.Blocks.MOSSY_AERRACK || istate.getBlock() == Uplands.Blocks.SKYMOSS) {
+            if (istate.getBlock() == Caelum.Blocks.MOSSY_AERRACK || istate.getBlock() == Caelum.Blocks.SKYMOSS) {
                 return true;
             }
         }
@@ -36,6 +36,6 @@ public class AerrackBlock extends Block implements Fertilizable {
 
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        world.setBlockState(pos, Uplands.Blocks.MOSSY_AERRACK.getDefaultState(), 3);
+        world.setBlockState(pos, Caelum.Blocks.MOSSY_AERRACK.getDefaultState(), 3);
     }
 }

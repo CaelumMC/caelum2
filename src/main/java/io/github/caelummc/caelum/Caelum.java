@@ -18,7 +18,7 @@ import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Uplands implements ModInitializer {
+public class Caelum implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("caelum");
 
     @Override

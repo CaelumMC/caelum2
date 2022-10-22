@@ -6,7 +6,7 @@
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-      "io.github.caelummc.caelum.datagen.UplandsData"
+      "io.github.caelummc.caelum.datagen.CaelumData"
     ]
   },
   "depends": {
