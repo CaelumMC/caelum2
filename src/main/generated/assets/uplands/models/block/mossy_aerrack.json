@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "uplands:block/aerrack",
+    "side": "uplands:block/mossy_aerrack_side",
+    "top": "uplands:block/mossy_aerrack"
+  }
+}

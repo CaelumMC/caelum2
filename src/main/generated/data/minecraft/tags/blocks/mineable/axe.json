@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "caelum:aerrack_gravel",
-    "caelum:rooted_aerrack"
+    "uplands:aerrack_gravel",
+    "uplands:rooted_aerrack"
   ]
 }

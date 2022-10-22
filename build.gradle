@@ -55,13 +55,13 @@ loom {
             name "Data Generation"
             vmArg "-Dfabric-api.datagen"
             vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
-            vmArg "-Dfabric-api.datagen.modid=caelum-datagen"
+            vmArg "-Dfabric-api.datagen.modid=uplands-datagen"
             runDir "build/datagen"
             source sourceSets.datagen
         }
     }
     mods {
-        "caelum-datagen" {
+        "uplands-datagen" {
             sourceSet project(":").sourceSets.datagen
         }
     }
