@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "id": "uplands-datagen",
+  "id": "caelum-datagen",
   "name": "Caelum Data Generation",
   "version": "${version}",
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-      "io.github.caelummc.uplands.datagen.UplandsData"
+      "io.github.caelummc.caelum.datagen.UplandsData"
     ]
   },
   "depends": {
-    "uplands": "*"
+    "caelum": "*"
   }
 }

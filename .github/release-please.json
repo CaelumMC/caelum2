@@ -6,7 +6,7 @@
   "extra-files": ["gradle.properties"],
   "packages": {
     ".": {
-      "component": "uplands",
+      "component": "caelum",
       "include-component-in-tag": false
     }
   }

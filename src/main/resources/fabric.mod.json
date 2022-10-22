@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "uplands",
+  "id": "caelum",
   "version": "${version}",
   "name": "Uplands",
   "description": "Moist and icy world, full of color and magic. As long as you obey the rules.",
@@ -12,16 +12,16 @@
   },
 
   "license": "MIT",
-  "icon": "assets/uplands/icon.png",
+  "icon": "assets/caelum/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.caelummc.uplands.Uplands"
+      "io.github.caelummc.caelum.Uplands"
     ]
   },
   "mixins": [
-    "uplands.mixins.json"
+    "caelum.mixins.json"
   ],
 
   "depends": {

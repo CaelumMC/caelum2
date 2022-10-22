@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "caelum:block/skymoss_stalks_stage0"
+    },
+    "age=1": {
+      "model": "caelum:block/skymoss_stalks_stage1"
+    }
+  }
+}

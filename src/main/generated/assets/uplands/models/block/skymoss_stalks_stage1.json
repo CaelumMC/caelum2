@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "uplands:block/skymoss_stalks_stage1"
-  }
-}

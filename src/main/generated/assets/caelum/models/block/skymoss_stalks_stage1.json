@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "caelum:block/skymoss_stalks_stage1"
+  }
+}

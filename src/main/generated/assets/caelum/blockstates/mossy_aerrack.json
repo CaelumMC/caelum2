@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "caelum:block/mossy_aerrack"
+      },
+      {
+        "model": "caelum:block/mossy_aerrack",
+        "y": 90
+      },
+      {
+        "model": "caelum:block/mossy_aerrack",
+        "y": 180
+      },
+      {
+        "model": "caelum:block/mossy_aerrack",
+        "y": 270
+      }
+    ]
+  }
+}
