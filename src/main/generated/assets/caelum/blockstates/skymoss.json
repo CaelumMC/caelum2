@@ -1,0 +1,78 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "caelum:block/skymoss"
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "x": 90
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "x": 180
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "x": 270
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "y": 90
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "x": 180,
+        "y": 90
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "x": 270,
+        "y": 90
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "y": 180
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "x": 180,
+        "y": 180
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "x": 270,
+        "y": 180
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "y": 270
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "x": 180,
+        "y": 270
+      },
+      {
+        "model": "caelum:block/skymoss",
+        "x": 270,
+        "y": 270
+      }
+    ]
+  }
+}

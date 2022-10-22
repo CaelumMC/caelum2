@@ -48,14 +48,14 @@ class ModelProvider extends FabricModelProvider {
         gen.registerSimpleCubeAll(Uplands.Blocks.AERRACK_GRAVEL);
         gen.registerSimpleCubeAll(Uplands.Blocks.ROOTED_AERRACK);
         registerMossyAerrack(gen, Uplands.Blocks.MOSSY_AERRACK, TextureMap.getId(Uplands.Blocks.AERRACK));
-        registerNetherrackLike(gen, Uplands.Blocks.SKYMOSS_BLOCK);
+        registerNetherrackLike(gen, Uplands.Blocks.SKYMOSS);
         registerSkymossStalks(gen, Uplands.Blocks.SKYMOSS_STALKS);
 
         gen.registerParentedItemModel(Uplands.Blocks.AERRACK, new Identifier("caelum:block/aerrack"));
         gen.registerParentedItemModel(Uplands.Blocks.AERRACK_GRAVEL, new Identifier("caelum:block/aerrack_gravel"));
         gen.registerParentedItemModel(Uplands.Blocks.ROOTED_AERRACK, new Identifier("caelum:block/rooted_aerrack"));
         gen.registerParentedItemModel(Uplands.Blocks.MOSSY_AERRACK, new Identifier("caelum:block/mossy_aerrack"));
-        gen.registerParentedItemModel(Uplands.Blocks.SKYMOSS_BLOCK, new Identifier("caelum:block/skymoss_block"));
+        gen.registerParentedItemModel(Uplands.Blocks.SKYMOSS, new Identifier("caelum:block/skymoss"));
         gen.registerItemModel(Uplands.Blocks.SKYMOSS_STALKS);
     }
 
@@ -98,7 +98,7 @@ class BlockLootTableProvider extends FabricBlockLootTableProvider {
         this.addDrop(Uplands.Blocks.AERRACK_GRAVEL);
         // TODO change sticks to skyroot sticks when added
         this.addDrop(Uplands.Blocks.ROOTED_AERRACK, rootedAerrackDrop(Uplands.Blocks.ROOTED_AERRACK, Uplands.Blocks.AERRACK_GRAVEL, Items.STICK));
-        this.addDrop(Uplands.Blocks.SKYMOSS_BLOCK);
+        this.addDrop(Uplands.Blocks.SKYMOSS);
         this.addDrop(Uplands.Blocks.SKYMOSS_STALKS, BlockLootTableGenerator::dropsWithShears);
     }
 
@@ -122,7 +122,7 @@ class BlockTagProvider extends FabricTagProvider.BlockTagProvider {
         this.getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).add(Uplands.Blocks.AERRACK);
         this.getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE).add(Uplands.Blocks.AERRACK_GRAVEL);
         this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(Uplands.Blocks.AERRACK_GRAVEL, Uplands.Blocks.ROOTED_AERRACK);
-        this.getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).add(Uplands.Blocks.SKYMOSS_BLOCK);
+        this.getOrCreateTagBuilder(BlockTags.HOE_MINEABLE).add(Uplands.Blocks.SKYMOSS);
         this.getOrCreateTagBuilder(FabricMineableTags.SHEARS_MINEABLE).add(Uplands.Blocks.SKYMOSS_STALKS);
 
     }

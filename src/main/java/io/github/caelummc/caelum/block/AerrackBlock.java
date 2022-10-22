@@ -3,15 +3,12 @@ package io.github.caelummc.caelum.block;
 import io.github.caelummc.caelum.Uplands;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Fertilizable;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-
-import java.util.Iterator;
 
 public class AerrackBlock extends Block implements Fertilizable {
     public AerrackBlock(Settings settings) {
@@ -25,7 +22,7 @@ public class AerrackBlock extends Block implements Fertilizable {
         }
         for (BlockPos ipos : BlockPos.iterate(pos.add(-1, -1, -1), pos.add(1, 1, 1))) {
             BlockState istate = world.getBlockState(ipos);
-            if (istate.getBlock() == Uplands.Blocks.MOSSY_AERRACK || istate.getBlock() == Uplands.Blocks.SKYMOSS_BLOCK) {
+            if (istate.getBlock() == Uplands.Blocks.MOSSY_AERRACK || istate.getBlock() == Uplands.Blocks.SKYMOSS) {
                 return true;
             }
         }

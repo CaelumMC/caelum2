@@ -29,7 +29,7 @@ public class SkymossStalksBlock extends PlantBlock {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.getBlock() == Uplands.Blocks.SKYMOSS_BLOCK
+        return floor.getBlock() == Uplands.Blocks.SKYMOSS
                 || floor.getBlock() == Uplands.Blocks.MOSSY_AERRACK;
     }
 
