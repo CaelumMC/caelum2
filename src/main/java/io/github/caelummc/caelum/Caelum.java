@@ -13,9 +13,16 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeEffects;
+import net.minecraft.world.biome.GenerationSettings;
+import net.minecraft.world.biome.SpawnSettings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,8 +33,8 @@ public class Caelum implements ModInitializer {
     public void onInitialize() {
         Blocks.register();
         Items.register();
-        
-        Registry.register(Registry.CHUNK_GENERATOR, new Identifier("caelum:caelum"), CaelumChunkGenerator.CODEC);
+        Misc.register();
+
     }
 
     public static class Blocks {
@@ -64,6 +71,44 @@ public class Caelum implements ModInitializer {
 
         private static Item register(String name, Item block) {
             return Registry.register(Registry.ITEM, new Identifier("caelum", name), block);
+        }
+    }
+
+    @SuppressWarnings("unused")
+    public static class Misc {
+        public static final Biome BIOME = createBiome();
+
+        private static void register() {
+            register(BuiltinRegistries.BIOME, "caelum", BIOME);
+            register(Registry.CHUNK_GENERATOR, "caelum", CaelumChunkGenerator.CODEC);
+        }
+
+        private static <T> T register(Registry<T> registry, String name, T entry) {
+            Identifier id = new Identifier("caelum", name);
+            return Registry.register(registry, id, entry);
+        }
+
+        public static Biome createBiome() {
+            SpawnSettings.Builder builder = new SpawnSettings.Builder();
+            GenerationSettings.Builder generation = new GenerationSettings.Builder();
+
+            return new Biome.Builder()
+                    .precipitation(Biome.Precipitation.RAIN)
+                    .temperature(0.25F).downfall(0.25F)
+                    .effects(new BiomeEffects.Builder()
+                            .waterColor(0x3D57D6)
+                            .waterFogColor(0x050533)
+                            .fogColor(12638463)
+                            .skyColor(getSkyColor(0.25F))
+                            .moodSound(BiomeMoodSound.CAVE).build())
+                    .spawnSettings(builder.build())
+                    .generationSettings(generation.build()).build();
+        }
+
+        private static int getSkyColor(float temperature) {
+            float f = temperature / 3.0F;
+            f = MathHelper.clamp(f, -1.0F, 1.0F);
+            return MathHelper.hsvToRgb(0.62222224F - f * 0.05F, 0.5F + f * 0.1F, 1.0F);
         }
     }
 }

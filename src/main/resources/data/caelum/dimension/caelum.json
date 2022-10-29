@@ -1,11 +1,10 @@
 {
   "type": "caelum:caelum",
   "generator": {
+    "type": "caelum:caelum",
     "biome_source": {
-      "biome": "minecraft:plains",
+      "biome": "caelum:caelum",
       "type": "minecraft:fixed"
-    },
-    "settings": "caelum:caelum",
-    "type": "caelum:caelum"
+    }
   }
 }
